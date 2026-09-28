@@ -1,0 +1,10 @@
+# Runtime parameters loaded separately from the static agent manifest.
+max_retry: 3
+timeout_seconds: 30
+
+# TargetScopingNode pauses for human confirmation when the scope is ambiguous.
+# HITL requires memory so the graph can resume from its checkpoint.
+memory_enabled: true
+hitl:
+  enabled: true
+  max_hitl: 4

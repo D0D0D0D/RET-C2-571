@@ -1,0 +1,25 @@
+# Agent Manifest — AgentRegistry entry point
+# AgentRegistry reads these keys at the root level.
+id: "RET-C2-571"
+name: "Retail Category Intelligence Orchestrator"
+namespace: "ret"
+version: "1.0.0"
+enabled: true
+category: "Cat 2"
+generation_mode: "llm"
+industry: "RET"
+
+# Conceptual Cat 2 orchestration pattern. The implementation inherits
+# AgentBaseGraph directly and wraps the domain workflow in a GraphNode.
+base_type: "OrchestratorAgent"
+
+# AgentRegistry splits the dotted value into module and class name.
+class: "src.graph.graph.CategoryIntelligenceOrchestratorAgent"
+
+required_trust_level: "VERIFIED_EXTERNAL"
+
+# The source has no ctx.secrets.require() calls and constructs no optional
+# provider client requiring a framework extra.
+requires:
+  secrets: []
+  extras: []
